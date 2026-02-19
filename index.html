@@ -11,6 +11,21 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Welcome modal: visitor name + login time saved as log in Netlify Forms (view in Netlify dashboard). -->
+  <div id="welcome-overlay" class="welcome-overlay" role="dialog" aria-label="Welcome" aria-modal="true">
+    <div class="welcome-modal">
+      <h2 class="welcome-title">Welcome</h2>
+      <p class="welcome-text">Please enter your name to enter the portfolio.</p>
+      <form id="welcome-form" name="welcome" class="welcome-form" data-netlify="true">
+        <input type="hidden" name="form-name" value="welcome">
+        <input type="hidden" name="login-time" id="welcome-login-time">
+        <input type="text" id="welcome-name" name="visitor-name" class="welcome-input" placeholder="Your name" required autocomplete="name" maxlength="100">
+        <button type="submit" class="btn btn-primary welcome-btn">Get in</button>
+      </form>
+      <p class="welcome-hint" id="welcome-hint"></p>
+    </div>
+  </div>
+
   <header class="header">
     <nav class="nav">
       <a href="#hero" class="nav-logo">AD</a>
@@ -32,15 +47,20 @@
 
   <main>
     <section id="hero" class="hero">
-      <div class="hero-content">
-        <span class="hero-badge">Portfolio 2026</span>
-        <p class="hero-greeting">Hello, I'm</p>
-        <h1 class="hero-name">Agilesh D</h1>
-        <p class="hero-title">Associate Software Engineer · QA & Test Automation</p>
-        <p class="hero-tagline">2.8+ years in manual, automation, and AI-driven testing. Passionate about quality, performance, and continuous improvement.</p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <span class="hero-badge">Portfolio 2026</span>
+          <p class="hero-greeting">Hello, I'm</p>
+          <h1 class="hero-name">Agilesh D</h1>
+          <p class="hero-title">Associate Software Engineer · QA & Test Automation</p>
+          <p class="hero-tagline">2.8+ years in manual, automation, and AI-driven testing. Passionate about quality, performance, and continuous improvement.</p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-profile">
+          <img src="assets/profile.png" alt="Agilesh D - Profile" class="hero-profile-img" width="320" height="320">
         </div>
       </div>
       <div class="hero-decoration" aria-hidden="true"></div>
@@ -197,10 +217,14 @@
             <h4>Kudos</h4>
             <p>Multiple recognitions from Team Lead for consistent high-quality contributions</p>
           </div>
-          <div class="accomplishment-card">
+          <div class="accomplishment-card accomplishment-card-clickable" data-cert-href="assets/aws-solutions-architect-associate.pdf">
             <span class="accomplishment-icon">☁️</span>
-            <h4>AWS Certified Solutions Architect</h4>
+            <h4>AWS Certified Solutions Architect – Associate</h4>
             <p>Cloud solution design and implementation</p>
+            <div class="accomplishment-card-actions">
+              <a href="assets/aws-solutions-architect-associate.pdf" target="_blank" rel="noopener noreferrer" class="accomplishment-card-action">View certificate</a>
+              <a href="https://www.linkedin.com/in/agileshdeva-05/details/certifications" target="_blank" rel="noopener noreferrer" class="accomplishment-card-action">LinkedIn</a>
+            </div>
           </div>
           <div class="accomplishment-card">
             <span class="accomplishment-icon">🤖</span>
